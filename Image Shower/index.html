@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImageShower</title>
+</head>
+<style>
+    .image{
+        border: 1px solid #000;
+    }
+    #imgs{
+        width: 500px;
+        height: 400px;
+    }
+</style>
+<body>
+    <h1>Image Shower</h1>
+    <div class="image">
+        <img id="imgs" src="IMG-20221112-WA0003.jpg" alt="">
+    </div>
+    <button onclick="next()">Next</button>
+    <button onclick="previous()">Previous</button>
+</body>
+<script>
+    var a=1
+     var images=[
+    'IMG_20240204_011655_885.jpg',
+    'IMG_20240326_233636_015.jpg',
+    'IMG-20221112-WA0003.jpg',
+    'IMG-20240204-WA0001.jpg'  
+];
+function next(){
+    a++;
+    if(a>=images.length){
+        a=0;
+    }
+    document.getElementById("imgs").src=images[a];
+}
+
+function previous(){
+    a--;
+    if(a<0){
+        a=images.length - 1
+    }
+    document.getElementById("imgs").src=images[a];
+}
+
+
+// var a = 1;
+//         var images = [
+//             'IMG-20221112-WA0003.jpg',
+//             'IMG-20240204-WA0001.jpg',
+//             'IMG_20240326_233636_015.jpg',
+//             'IMG_20240204_011655_885.jpg'
+//         ];
+
+//         function next() {
+//             a++;
+//             if (a >= images.length) {
+//                 a = 0; // Reset to the first image
+//             }
+//             document.getElementsByClassName("imgs")[0].src = images[a];
+//         }
+//         function previous() {
+//             a--;
+//             if (a < 0) {
+//                 a = images.length - 1; // Go to the last image
+//             }
+//             document.getElementsByClassName("imgs")[0].src = images[a];
+//         }
+</script>
+</html>
